@@ -1,0 +1,33 @@
+@mixin aspectRatioBox($aspectRatio) {
+  height: 0;
+  overflow: hidden;
+  padding-top: #{$aspectRatio * 100%};
+  position: relative;
+  &__flexbox-centering {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin removeBtnDefaults() {
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+@function size($elementSize, $designWidth: 375) {
+  @return $elementSize * 100vw / $designWidth;
+}
