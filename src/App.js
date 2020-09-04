@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import TopBar from './common/TopBar';
 import AuthProvider from './AuthProvider';
 import 'src/styles/global.scss';
+import 'normalize.css';
 
 function App() {
   return (
