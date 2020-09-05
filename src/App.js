@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
-import Home from './pages/Home';
-import Admin from './pages/Admin';
-import Login from './pages/Login';
+import HomePage from './pages/Home';
+import AddTextPage from './pages/AddText';
+import AdminPage from './pages/Admin';
+import LoginPage from './pages/Login';
 import TopBar from './common/TopBar';
 import AuthProvider from './AuthProvider';
 import 'src/styles/global.scss';
@@ -22,10 +23,14 @@ function App() {
             <li>
               <Link to="/admin">Admin Page</Link>
             </li>
+            <li>
+              <Link to="/add-text">Add text</Link>
+            </li>
           </ul>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <PrivateRoute path="/admin" component={Admin} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/login" component={LoginPage} />
+          <PrivateRoute path="/add-text" component={AddTextPage} />
+          <PrivateRoute path="/admin" component={AdminPage} />
         </div>
       </Router>
     </AuthProvider>
