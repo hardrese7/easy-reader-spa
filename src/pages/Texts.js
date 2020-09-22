@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as firebase from 'firebase/app';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -25,7 +26,7 @@ function Texts() {
   return (
     <List component="nav">
       {texts.map((t) => (
-        <ListItem key={t.id} button>
+        <ListItem to={`/read-text/${t.id}`} component={Link} key={t.id} button>
           <ListItemText primary={t.title} secondary={'Progress 0%'} />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete">

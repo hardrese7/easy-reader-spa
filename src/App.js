@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import HomePage from './pages/Home';
 import AddTextPage from './pages/AddText';
 import TextsPage from './pages/Texts';
+import ReadTextPage from './pages/ReadText';
 import AdminPage from './pages/Admin';
 import LoginPage from './pages/Login';
 import TopBar from './common/TopBar';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <PrivateRoute path="/add-text" component={AddTextPage} />
           <PrivateRoute path="/texts" component={TextsPage} />
+          <PrivateRoute path="/read-text/:textId" component={ReadTextPage} />
           <PrivateRoute path="/admin" component={AdminPage} />
         </div>
       </Router>
